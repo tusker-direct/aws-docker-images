@@ -14,7 +14,7 @@ ENV NODE_VERSION 8.10.0
 ## Install Prerequisites
 ##
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libxml2 libxml2-dev libxslt1-dev rsyslog unzip && \
+    apt-get install -y --no-install-recommends libxml2 libxml2-dev libxslt1-dev unzip && \
     rm -rf /var/lib/apt/lists/*
 
 ##
@@ -56,7 +56,3 @@ RUN apt-key adv --fetch-keys https://dl.yarnpkg.com/debian/pubkey.gpg \
   && apt-get install --no-install-recommends --no-install-suggests -y yarn \
   && rm -rf /var/lib/apt/lists/*
 
-##
-## Setup Start command
-##
-RUN chmod 755 /rsyslog.sh
